@@ -1,9 +1,9 @@
 // Figma design: https://www.figma.com/design/TMGW6rLGene3cqHb4Kilz5/Pitch-Startup-App?node-id=2-2&p=f&t=3kaH2q2oTCaqbaSo-0
 
-import { client } from "@/sanity/lib/client";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { STARTUP_QUERIES } from "@/sanity/lib/queries";
 import SearchForm from "@/components/SearchForm";
-import StartupCard from "@/components/StartupCard";
+import StartupCard, { StartupType } from "@/components/StartupCard";
 
 export default async function Home({
   searchParams,
@@ -12,25 +12,7 @@ export default async function Home({
 }) {
   const { query } = await searchParams;
 
-  const posts = await client.fetch(STARTUP_QUERIES);
-
-  console.log(JSON.stringify(posts, null, 2));
-
-  // const posts = [
-  //   {
-  //     _id: 1,
-  //     _createdAt: new Date(),
-  //     title: "We Robots",
-  //     author: {
-  //       _id: 1,
-  //       name: "Dhruv",
-  //     },
-  //     image: "https://picsum.photos/200/300",
-  //     description: "This is a description",
-  //     category: "Robots",
-  //     views: 55,
-  //   },
-  // ];
+  const { data: startups } = await sanityFetch({ query: STARTUP_QUERIES });
 
   return (
     <>
@@ -55,15 +37,17 @@ export default async function Home({
         </p>
 
         <ul className="card-grid mt-7">
-          {posts.length > 0 ? (
-            posts.map((post: StartupCardType) => (
-              <StartupCard key={post?._id} post={post} />
+          {startups.length > 0 ? (
+            startups.map((startup: StartupType) => (
+              <StartupCard key={startup?._id} startup={startup} />
             ))
           ) : (
             <li className="no-results">No startups found!</li>
           )}
         </ul>
       </section>
+
+      <SanityLive />
     </>
   );
 }
