@@ -5,14 +5,18 @@ import { STARTUP_QUERIES } from "@/sanity/lib/queries";
 import SearchForm from "@/components/SearchForm";
 import StartupCard, { StartupType } from "@/components/StartupCard";
 
-export default async function Home({
+export default async function HomePage({
   searchParams,
 }: {
   searchParams: Promise<{ query?: string }>;
 }) {
   const { query } = await searchParams;
+  const params = { search: query || null };
 
-  const { data: startups } = await sanityFetch({ query: STARTUP_QUERIES });
+  const { data: startups } = await sanityFetch({
+    query: STARTUP_QUERIES,
+    params,
+  });
 
   return (
     <>
