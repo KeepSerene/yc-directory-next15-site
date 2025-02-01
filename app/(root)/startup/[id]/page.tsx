@@ -63,9 +63,9 @@ export default async function StartupDetailsPage({
               />
 
               <div>
-                <p className="text-20-medium">{startup.author.name}</p>
+                <p className="text-20-medium">{startup.author?.name}</p>
                 <p className="text-16-medium !text-black-300">
-                  @{startup.author.username}
+                  @{startup.author?.username}
                 </p>
               </div>
             </Link>
@@ -91,7 +91,7 @@ export default async function StartupDetailsPage({
       </section>
 
       <Suspense fallback={<Skeleton className="view-skeleton" />}>
-        <Views startupId={id} />
+        <Views id={id} />
       </Suspense>
     </>
   );

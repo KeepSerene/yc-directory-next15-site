@@ -165,7 +165,7 @@
     @apply font-bold text-[1.125rem] text-black uppercase;
   }
 
-  .startup-form_input {
+  .startup-form-input {
     @apply border-[3px] border-black px-5 py-7 text-[1.125rem] text-black font-semibold rounded-full mt-3 placeholder:text-black-300 !important;
   }
 

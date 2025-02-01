@@ -1,4 +1,4 @@
-export default function Ping() {
+export default function PingIndicator() {
   return (
     <div aria-hidden="true" className="relative">
       <div className="absolute -left-4 top-1">
