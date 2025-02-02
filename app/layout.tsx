@@ -1,9 +1,8 @@
 import "./globals.css";
-import "easymde/dist/easymde.min.css"; // For the markdown editor
-
+import "easymde/dist/easymde.min.css"; // For the markdown editor in Sanity studio (I guess!)
 import localFont from "next/font/local";
-
 import type { Metadata } from "next";
+import { Toaster } from "@/components/ui/toaster";
 
 const workSans = localFont({
   src: [
@@ -69,7 +68,11 @@ export default function GlobalLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${workSans.variable} antialiased`}>{children}</body>
+      <body className={`${workSans.variable} antialiased`}>
+        {children}
+
+        <Toaster />
+      </body>
     </html>
   );
 }
