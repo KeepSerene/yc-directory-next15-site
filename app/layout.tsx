@@ -57,8 +57,53 @@ const workSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "YC Directory",
-  description: "Pitch, vote, and grow with YC Directory",
+  title: {
+    default: "YC Directory - Startup Pitch Platform",
+    template: "%s | YC Directory",
+  },
+
+  description:
+    "Discover, pitch, and connect with innovative startups. Submit your startup idea, vote on pitches, and grow your entrepreneurial network.",
+
+  keywords: [
+    "startup",
+    "entrepreneurship",
+    "pitch",
+    "innovation",
+    "startup directory",
+    "Y Combinator",
+    "tech startups",
+  ],
+
+  openGraph: {
+    title: "YC Directory - Startup Pitch Platform",
+    description: "Discover, pitch, and connect with innovative startups.",
+    type: "website",
+    url: "https://yc-directory-keep-serene-ofilei3pl.vercel.app/",
+    images: [
+      {
+        url: "/yc-directory-home-page.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "YC Directory - Startup Pitch Platform",
+    description: "Discover, pitch, and connect with innovative startups.",
+    images: ["/yc-directory-home-page.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function GlobalLayout({

@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YC Directory - Startup Pitch Platform
 
-## Getting Started
+## Overview
 
-First, run the development server:
+YC Directory is an innovative platform for entrepreneurs to pitch their startup ideas, connect with other founders, and grow their network.
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 (Canary)
+- **Backend**: Sanity CMS
+- **Authentication**: GitHub OAuth (NextAuth)
+- **Styling**: Tailwind CSS
+- **Error Tracking**: Sentry
+- **UI Components**: Shadcn/UI
+- **Runtime**: React 19
+
+## Key Features
+
+- Startup pitch submissions
+- User authentication via GitHub
+- Search and filter startups
+- User profiles
+- Markdown-powered pitch descriptions
+- Responsive design
+
+## Installation
+
+### Prerequisites
+
+- Node.js 20+
+- npm 10.8.2
+
+### Setup
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/KeepSerene/yc-directory-next15-site.git
+cd yc-directory-next15-site
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Set up environment variables
+
+- Create `.env.local` file
+- Add necessary configurations for:
+  - Sanity
+  - GitHub OAuth
+  - Sentry DSN
+
+4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Notable Technologies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Next.js 15 Canary
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Implemented Partial Prerendering (PPR)
+- Incremental Static Regeneration
+- Server Actions
 
-## Learn More
+### React 19 Features
 
-To learn more about Next.js, take a look at the following resources:
+- `useActionState` hook for form state management
+- Improved server-side rendering
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### GitHub OAuth Integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Seamless authentication
+- Automatic user profile creation in Sanity
+- Secure login process
 
-## Deploy on Vercel
+### Sanity CMS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Headless CMS for content management
+- Dynamic schema definition
+- Real-time content updates
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Sentry Integration
+
+- Error tracking
+- Performance monitoring
+- Automatic error reporting
+
+### Shadcn/UI
+
+- Customizable, accessible UI components
+- Tailwind CSS integration
+- Modular design system
+
+## Deployment
+
+- Vercel recommended for optimal Next.js deployment
+- Configure environment variables
+- Set up Sanity and Sentry integrations
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit changes
+4. Push to the branch
+5. Create a Pull Request
+
+## Author
+
+**Dhrubajyoti Bhattacharjee**
+
+- GitHub: [@KeepSerene](https://github.com/KeepSerene)
+- LinkedIn: [Dhrubajyoti Bhattacharjee](https://www.linkedin.com/in/dhrubajyoti-bhattacharjee-320822318/)
+- Personal Website: [MathToDev](https://math-to-dev.vercel.app/)
+
+## Live Demo
+
+[Insert Live Demo URL](https://yc-directory-keep-serene-ofilei3pl.vercel.app/)
+
+## License
+
+This project is licensed under the MIT License.
