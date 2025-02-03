@@ -1,8 +1,7 @@
 // Figma design: https://www.figma.com/design/TMGW6rLGene3cqHb4Kilz5/Pitch-Startup-App?node-id=2-2&p=f&t=3kaH2q2oTCaqbaSo-0
 
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
-import { STARTUP_QUERIES } from "@/sanity/lib/queries";
-import { auth } from "@/auth";
+import { QUERY_STARTUPS } from "@/sanity/lib/queries";
 import SearchForm from "@/components/SearchForm";
 import StartupCard, { StartupType } from "@/components/StartupCard";
 
@@ -14,11 +13,8 @@ export default async function HomePage({
   const { query } = await searchParams;
   const params = { search: query || null };
 
-  const session = await auth();
-  console.log("Session id:", session?.id);
-
   const { data: startups } = await sanityFetch({
-    query: STARTUP_QUERIES,
+    query: QUERY_STARTUPS,
     params,
   });
 
