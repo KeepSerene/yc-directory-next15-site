@@ -98,7 +98,7 @@ npm run dev
 
 ## Deployment
 
-- Vercel recommended for optimal Next.js deployment
+- Vercel (recommended) for optimal Next.js deployment
 - Configure environment variables
 - Set up Sanity and Sentry integrations
 
@@ -120,7 +120,7 @@ npm run dev
 
 ## Live Demo
 
-[Insert Live Demo URL](https://yc-directory-keep-serene-ofilei3pl.vercel.app/)
+[Play around!](https://yc-directory-keep-serene-ofilei3pl.vercel.app/)
 
 ## License
 
